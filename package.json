@@ -32,7 +32,7 @@
   "devDependencies": {
     "buffer-from": "^1.1.1",
     "express": "^4.15.3",
-    "mocha": "^3.5.3",
+    "mocha": "^4.1.0",
     "nyc": "^11.2.1",
     "serve-static": "^1.12.3",
     "ssestream": "^1.0.0",
@@ -40,10 +40,10 @@
     "webpack": "^3.5.6"
   },
   "scripts": {
-    "test": "mocha --reporter spec && standard",
+    "test": "mocha --reporter spec --exit && standard",
     "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
     "postpublish": "git push && git push --tags",
-    "coverage": "nyc --reporter=html --reporter=text _mocha --reporter spec"
+    "coverage": "nyc --reporter=html --reporter=text _mocha --reporter spec --exit"
   },
   "engines": {
     "node": ">=0.12.0"
